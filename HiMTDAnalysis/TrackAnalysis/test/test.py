@@ -20,7 +20,7 @@ options = VarParsing.VarParsing ('analysis')
 # Input and Output File Names
 options.outputFile = "HiMTDTree.root"
 options.inputFiles = "/store/mc/PhaseIIMTDTDRAutumn18DR/D0_PiK_prompt_pt0_y4_5p5TeV_TuneCP5_Pythia8/FEVT/NoPU_103X_upgrade2023_realistic_v2-v1/30000/FFDBA739-F97F-B347-BAB9-91EC1A7F2CE1.root"
-options.maxEvents  = -1 # -1 means all events
+options.maxEvents  = 2000 # -1 means all events
 
 # Get and parse the command line arguments
 options.parseArguments()
