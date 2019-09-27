@@ -27,7 +27,7 @@ TH1::SetDefaultSumw2(kTRUE);
 TProfile::SetDefaultSumw2(kTRUE); 
 
 
-TFile* f1 = new TFile("/storage1/users/wl33/MTD/HiMTDTree_numEvent10000.root");
+TFile* f1 = new TFile("SampleTree.root");
 //Replace with pwd to Tree we want to analyze.
 
 TTree* t= (TTree*) f1->Get("timeAna/HiMTDTree");
