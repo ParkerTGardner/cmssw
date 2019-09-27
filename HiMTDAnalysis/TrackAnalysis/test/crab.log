@@ -1,0 +1,285 @@
+DEBUG 2019-09-25 19:55:11.369 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2019-09-25 19:55:11.370 UTC: 	 Could not find CRAB cache file /home/ptg2/.crab3; creating a new one.
+DEBUG 2019-09-25 19:55:11.383 UTC: 	 Checking credentials
+DEBUG 2019-09-25 19:55:11.383 UTC: 	 Found proxy file /tmp/x509up_u18677
+DEBUG 2019-09-25 19:55:11.384 UTC: 	 Getting proxy life time left
+DEBUG 2019-09-25 19:55:11.487 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -timeleft
+ output : 42886
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:55:11.590 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -actimeleft
+ output : 
+ error: 
+ retcode : 1
+DEBUG 2019-09-25 19:55:11.590 UTC: 	 Proxy lifetime 42886 secs is different from voms extension lifetime 0 secs for proxy: /tmp/x509up_u18677
+DEBUG 2019-09-25 19:55:11.590 UTC: 	 Proxy valid for 00:00:00 hours
+DEBUG 2019-09-25 19:55:11.590 UTC: 	 Creating new proxy for 24:00 hours with VO group '' and VO role 'NULL'.
+DEBUG 2019-09-25 19:55:17.502 UTC: 	 Executing : 
+ command : voms-proxy-init -voms cms:/cms -valid 24:00 -rfc
+ output : None
+ error: None
+ retcode : 0
+DEBUG 2019-09-25 19:55:17.606 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -timeleft
+ output : 86400
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:55:17.710 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -actimeleft
+ output : 86400
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:55:17.814 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u18677 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:55:17.815 UTC: 	 Proxy created.
+DEBUG 2019-09-25 19:55:17.922 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pgardner/CN=839719/CN=Parker Gardner
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:55:17.922 UTC: 	 Checking credentials
+DEBUG 2019-09-25 19:55:17.922 UTC: 	 Found proxy file /tmp/x509up_u18677
+DEBUG 2019-09-25 19:55:17.922 UTC: 	 Getting proxy life time left
+DEBUG 2019-09-25 19:55:18.025 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -timeleft
+ output : 86400
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:55:18.128 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -actimeleft
+ output : 86399
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:55:18.128 UTC: 	 Proxy lifetime 86400 secs is different from voms extension lifetime 86399 secs for proxy: /tmp/x509up_u18677
+DEBUG 2019-09-25 19:55:18.128 UTC: 	 Proxy valid for 23:59:59 hours
+DEBUG 2019-09-25 19:55:18.230 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u18677 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:55:18.231 UTC: 	 Command use: checkwrite
+DEBUG 2019-09-25 19:55:18.231 UTC: 	 Options use: ['--site=T3_US_Rice']
+DEBUG 2019-09-25 19:55:18.231 UTC: 	 Instance is None
+DEBUG 2019-09-25 19:55:18.231 UTC: 	 Server base url is None
+INFO 2019-09-25 19:55:18.245 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2019-09-25 19:55:18.245 UTC: 	 Retrieving DN from proxy...
+INFO 2019-09-25 19:55:18.491 UTC: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pgardner/CN=839719/CN=Parker Gardner
+INFO 2019-09-25 19:55:18.492 UTC: 	 Retrieving username for this DN...
+DEBUG 2019-09-25 19:55:18.492 UTC: 	 Retrieving username from SiteDB...
+DEBUG 2019-09-25 19:55:20.029 UTC: 	 Username is: pgardner
+DEBUG 2019-09-25 19:55:20.030 UTC: 	 Retrieving username from CRIC...
+DEBUG 2019-09-25 19:55:22.476 UTC: 	 Username is: pgardner
+INFO 2019-09-25 19:55:22.476 UTC: 	 username is pgardner
+INFO 2019-09-25 19:55:22.476 UTC: 	 Validating LFN /store/user/pgardner...
+INFO 2019-09-25 19:55:22.476 UTC: 	 LFN /store/user/pgardner is valid.
+INFO 2019-09-25 19:55:22.485 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2019-09-25 19:55:22.485 UTC: 	 Will check write permission in /store/user/pgardner on site T3_US_Rice
+INFO 2019-09-25 19:55:23.152 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20190925_145522 and copy (dummy) file crab3checkwrite_20190925_145522.tmp to /store/user/pgardner
+
+INFO 2019-09-25 19:55:23.155 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///home/ptg2/CMSSW_10_4_0_mtd5/src/HiMTDAnalysis/TrackAnalysis/test/crab3checkwrite_20190925_145522.tmp 'gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190925_145522/crab3checkwrite_20190925_145522.tmp'
+INFO 2019-09-25 19:55:23.156 UTC: 	 Please wait...
+INFO 2019-09-25 19:55:23.798 UTC: 	 Failed running copy command
+INFO 2019-09-25 19:55:23.799 UTC: 	   Stdout:
+    Copying 85 bytes file:///home/ptg2/CMSSW_10_4_0_mtd5/src/HiMTDAnalysis/TrackAnalysis/test/crab3checkwrite_20190925_145522.tmp => gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190925_145522/crab3checkwrite_20190925_145522.tmp
+    event: [1569441323746] BOTH   GFAL2:CORE:COPY	LIST:ENTER	
+    event: [1569441323746] BOTH   GFAL2:CORE:COPY	LIST:ITEM	file:///home/ptg2/CMSSW_10_4_0_mtd5/src/HiMTDAnalysis/TrackAnalysis/test/crab3checkwrite_20190925_145522.tmp => gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190925_145522/crab3checkwrite_20190925_145522.tmp
+    event: [1569441323747] BOTH   GFAL2:CORE:COPY	LIST:EXIT	
+    
+INFO 2019-09-25 19:55:23.799 UTC: 	   Stderr:
+    gfal-copy error: 13 (Permission denied) - globus_ftp_client: the server responded with an error 550 550-GlobusError: v=1 c=PERMISSION_DENIED  550-GridFTP-Errno: 13  550-GridFTP-Reason: System error in mkdir  550-GridFTP-Error-String: Permission denied  550 End.   
+    
+INFO 2019-09-25 19:55:23.801 UTC: 	 
+Checkwrite Result:
+INFO 2019-09-25 19:55:23.801 UTC: 	 Error: Unable to write in /store/user/pgardner on site T3_US_Rice
+       You may want to contact the site administrators sending them the 'crab checkwrite' output as printed above.
+INFO 2019-09-25 19:55:23.801 UTC: 	 Note: You cannot write to a site if you did not ask permission.
+DEBUG 2019-09-25 19:56:49.646 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2019-09-25 19:56:49.646 UTC: 	 Found CRAB cache file /home/ptg2/.crab3
+DEBUG 2019-09-25 19:56:49.655 UTC: 	 Checking credentials
+DEBUG 2019-09-25 19:56:49.655 UTC: 	 Found proxy file /tmp/x509up_u18677
+DEBUG 2019-09-25 19:56:49.655 UTC: 	 Getting proxy life time left
+DEBUG 2019-09-25 19:56:49.758 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -timeleft
+ output : 43167
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:56:49.861 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -actimeleft
+ output : 43167
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:56:49.861 UTC: 	 Proxy valid for 11:59:27 hours
+DEBUG 2019-09-25 19:56:49.968 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pgardner/CN=839719/CN=Parker Gardner
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:56:49.969 UTC: 	 Checking credentials
+DEBUG 2019-09-25 19:56:49.969 UTC: 	 Found proxy file /tmp/x509up_u18677
+DEBUG 2019-09-25 19:56:49.969 UTC: 	 Getting proxy life time left
+DEBUG 2019-09-25 19:56:50.072 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -timeleft
+ output : 43166
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:56:50.175 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -actimeleft
+ output : 43166
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:56:50.176 UTC: 	 Proxy valid for 11:59:26 hours
+DEBUG 2019-09-25 19:56:50.279 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u18677 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-25 19:56:50.280 UTC: 	 Command use: checkwrite
+DEBUG 2019-09-25 19:56:50.280 UTC: 	 Options use: ['--site=T2_US_MIT']
+DEBUG 2019-09-25 19:56:50.280 UTC: 	 Instance is None
+DEBUG 2019-09-25 19:56:50.280 UTC: 	 Server base url is None
+INFO 2019-09-25 19:56:50.284 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2019-09-25 19:56:50.284 UTC: 	 Retrieving DN from proxy...
+INFO 2019-09-25 19:56:50.498 UTC: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pgardner/CN=839719/CN=Parker Gardner
+INFO 2019-09-25 19:56:50.499 UTC: 	 Retrieving username for this DN...
+DEBUG 2019-09-25 19:56:50.499 UTC: 	 Retrieving username from SiteDB...
+DEBUG 2019-09-25 19:56:51.993 UTC: 	 Username is: pgardner
+DEBUG 2019-09-25 19:56:51.993 UTC: 	 Retrieving username from CRIC...
+DEBUG 2019-09-25 19:56:54.390 UTC: 	 Username is: pgardner
+INFO 2019-09-25 19:56:54.390 UTC: 	 username is pgardner
+INFO 2019-09-25 19:56:54.390 UTC: 	 Validating LFN /store/user/pgardner...
+INFO 2019-09-25 19:56:54.390 UTC: 	 LFN /store/user/pgardner is valid.
+INFO 2019-09-25 19:56:54.398 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2019-09-25 19:56:54.399 UTC: 	 Will check write permission in /store/user/pgardner on site T2_US_MIT
+INFO 2019-09-25 19:56:55.064 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20190925_145654 and copy (dummy) file crab3checkwrite_20190925_145654.tmp to /store/user/pgardner
+
+INFO 2019-09-25 19:56:55.068 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///home/ptg2/CMSSW_10_4_0_mtd5/src/HiMTDAnalysis/TrackAnalysis/test/crab3checkwrite_20190925_145654.tmp 'gsiftp://se01.cmsaf.mit.edu:2811/cms/store/user/pgardner/crab3checkwrite_20190925_145654/crab3checkwrite_20190925_145654.tmp'
+INFO 2019-09-25 19:56:55.068 UTC: 	 Please wait...
+INFO 2019-09-25 19:56:59.589 UTC: 	 
+Successfully created directory crab3checkwrite_20190925_145654 and copied file crab3checkwrite_20190925_145654.tmp to /store/user/pgardner
+INFO 2019-09-25 19:56:59.590 UTC: 	 
+Attempting to delete file gsiftp://se01.cmsaf.mit.edu:2811/cms/store/user/pgardner/crab3checkwrite_20190925_145654/crab3checkwrite_20190925_145654.tmp
+
+INFO 2019-09-25 19:56:59.590 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -v -t 180 'gsiftp://se01.cmsaf.mit.edu:2811/cms/store/user/pgardner/crab3checkwrite_20190925_145654/crab3checkwrite_20190925_145654.tmp'
+INFO 2019-09-25 19:56:59.590 UTC: 	 Please wait...
+INFO 2019-09-25 19:57:01.950 UTC: 	 
+Successfully deleted file gsiftp://se01.cmsaf.mit.edu:2811/cms/store/user/pgardner/crab3checkwrite_20190925_145654/crab3checkwrite_20190925_145654.tmp
+INFO 2019-09-25 19:57:01.950 UTC: 	 
+Attempting to delete directory gsiftp://se01.cmsaf.mit.edu:2811/cms/store/user/pgardner/crab3checkwrite_20190925_145654/
+
+INFO 2019-09-25 19:57:01.950 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -r -v -t 180 'gsiftp://se01.cmsaf.mit.edu:2811/cms/store/user/pgardner/crab3checkwrite_20190925_145654/'
+INFO 2019-09-25 19:57:01.950 UTC: 	 Please wait...
+INFO 2019-09-25 19:57:07.218 UTC: 	 
+Successfully deleted directory gsiftp://se01.cmsaf.mit.edu:2811/cms/store/user/pgardner/crab3checkwrite_20190925_145654/
+INFO 2019-09-25 19:57:07.220 UTC: 	 
+Checkwrite Result:
+INFO 2019-09-25 19:57:07.220 UTC: 	 Success: Able to write in /store/user/pgardner on site T2_US_MIT
+DEBUG 2019-09-26 15:54:02.847 UTC: 	 Executing command: 'checkwrite'
+DEBUG 2019-09-26 15:54:02.848 UTC: 	 Found CRAB cache file /home/ptg2/.crab3
+DEBUG 2019-09-26 15:54:02.872 UTC: 	 Checking credentials
+DEBUG 2019-09-26 15:54:02.872 UTC: 	 Found proxy file /tmp/x509up_u18677
+DEBUG 2019-09-26 15:54:02.872 UTC: 	 Getting proxy life time left
+DEBUG 2019-09-26 15:54:02.975 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -timeleft
+ output : 43166
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-26 15:54:03.078 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -actimeleft
+ output : 43164
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-26 15:54:03.078 UTC: 	 Proxy lifetime 43166 secs is different from voms extension lifetime 43164 secs for proxy: /tmp/x509up_u18677
+DEBUG 2019-09-26 15:54:03.078 UTC: 	 Proxy valid for 11:59:24 hours
+DEBUG 2019-09-26 15:54:03.186 UTC: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pgardner/CN=839719/CN=Parker Gardner
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-26 15:54:03.186 UTC: 	 Checking credentials
+DEBUG 2019-09-26 15:54:03.186 UTC: 	 Found proxy file /tmp/x509up_u18677
+DEBUG 2019-09-26 15:54:03.186 UTC: 	 Getting proxy life time left
+DEBUG 2019-09-26 15:54:03.289 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -timeleft
+ output : 43165
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-26 15:54:03.392 UTC: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u18677 -actimeleft
+ output : 43164
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-26 15:54:03.393 UTC: 	 Proxy lifetime 43165 secs is different from voms extension lifetime 43164 secs for proxy: /tmp/x509up_u18677
+DEBUG 2019-09-26 15:54:03.393 UTC: 	 Proxy valid for 11:59:24 hours
+DEBUG 2019-09-26 15:54:03.496 UTC: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u18677 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2019-09-26 15:54:03.496 UTC: 	 Command use: checkwrite
+DEBUG 2019-09-26 15:54:03.496 UTC: 	 Options use: ['--site=T3_US_Rice']
+DEBUG 2019-09-26 15:54:03.496 UTC: 	 Instance is None
+DEBUG 2019-09-26 15:54:03.496 UTC: 	 Server base url is None
+INFO 2019-09-26 15:54:03.500 UTC: 	 Will check write permission in the default location /store/user/<username>
+INFO 2019-09-26 15:54:03.501 UTC: 	 Retrieving DN from proxy...
+INFO 2019-09-26 15:54:03.743 UTC: 	 DN is: /DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pgardner/CN=839719/CN=Parker Gardner
+INFO 2019-09-26 15:54:03.743 UTC: 	 Retrieving username for this DN...
+DEBUG 2019-09-26 15:54:03.743 UTC: 	 Retrieving username from SiteDB...
+DEBUG 2019-09-26 15:54:05.283 UTC: 	 Username is: pgardner
+DEBUG 2019-09-26 15:54:05.283 UTC: 	 Retrieving username from CRIC...
+DEBUG 2019-09-26 15:54:07.930 UTC: 	 Username is: pgardner
+INFO 2019-09-26 15:54:07.930 UTC: 	 username is pgardner
+INFO 2019-09-26 15:54:07.930 UTC: 	 Validating LFN /store/user/pgardner...
+INFO 2019-09-26 15:54:07.930 UTC: 	 LFN /store/user/pgardner is valid.
+INFO 2019-09-26 15:54:07.946 UTC: 	 Will use `gfal-copy`, `gfal-rm` commands for checking write permissions
+INFO 2019-09-26 15:54:07.946 UTC: 	 Will check write permission in /store/user/pgardner on site T3_US_Rice
+INFO 2019-09-26 15:54:08.622 UTC: 	 
+Attempting to create (dummy) directory crab3checkwrite_20190926_105407 and copy (dummy) file crab3checkwrite_20190926_105407.tmp to /store/user/pgardner
+
+INFO 2019-09-26 15:54:08.625 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-copy -p -v -t 180 file:///home/ptg2/CMSSW_10_4_0_mtd5/src/HiMTDAnalysis/TrackAnalysis/test/crab3checkwrite_20190926_105407.tmp 'gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190926_105407/crab3checkwrite_20190926_105407.tmp'
+INFO 2019-09-26 15:54:08.626 UTC: 	 Please wait...
+INFO 2019-09-26 15:54:09.504 UTC: 	 
+Successfully created directory crab3checkwrite_20190926_105407 and copied file crab3checkwrite_20190926_105407.tmp to /store/user/pgardner
+INFO 2019-09-26 15:54:09.504 UTC: 	 
+Attempting to delete file gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190926_105407/crab3checkwrite_20190926_105407.tmp
+
+INFO 2019-09-26 15:54:09.504 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -v -t 180 'gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190926_105407/crab3checkwrite_20190926_105407.tmp'
+INFO 2019-09-26 15:54:09.504 UTC: 	 Please wait...
+INFO 2019-09-26 15:54:10.013 UTC: 	 
+Successfully deleted file gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190926_105407/crab3checkwrite_20190926_105407.tmp
+INFO 2019-09-26 15:54:10.013 UTC: 	 
+Attempting to delete directory gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190926_105407/
+
+INFO 2019-09-26 15:54:10.013 UTC: 	 Executing command: which scram >/dev/null 2>&1 && eval `scram unsetenv -sh`; gfal-rm -r -v -t 180 'gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190926_105407/'
+INFO 2019-09-26 15:54:10.013 UTC: 	 Please wait...
+INFO 2019-09-26 15:54:10.572 UTC: 	 
+Successfully deleted directory gsiftp://bonner07.rice.edu/cms/osg/stage_out/store/user/pgardner/crab3checkwrite_20190926_105407/
+INFO 2019-09-26 15:54:10.575 UTC: 	 
+Checkwrite Result:
+INFO 2019-09-26 15:54:10.575 UTC: 	 Success: Able to write in /store/user/pgardner on site T3_US_Rice
